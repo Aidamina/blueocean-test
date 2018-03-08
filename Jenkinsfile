@@ -2,6 +2,7 @@ node {
  	// Clean workspace before doing anything
     deleteDir()
 
+    agent { docker 'openjdk:8-jre' } 
     try {
         stage ('Clone') {
         	checkout scm
@@ -21,7 +22,6 @@ node {
 	        }
         }
 		stage('Example Test') {
-            agent { docker 'openjdk:8-jre' } 
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
