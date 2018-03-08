@@ -5,22 +5,32 @@ pipeline {
     agent { docker 'openjdk:8-jre' } 
 	stages {
 		stage ('Clone') {
-			deleteDir()
-			checkout scm
+			steps {
+				deleteDir()
+				checkout scm
+			}
 		}
 		stage ('Build') {
-			sh "echo 'shell scripts to build project...'"
+			steps {
+				sh "echo 'shell scripts to build project...'"
+			}
 		}
 		stage ('Tests') {
 			parallel { 
 				stage('static') {
-					sh "echo 'shell scripts to run static tests...'"
+					steps {
+						sh "echo 'shell scripts to run static tests...'"
+					}
 				}
 				stage('unit') {
-					sh "echo 'shell scripts to run unit tests...'"
+					steps {
+						sh "echo 'shell scripts to run unit tests...'"
+					}
 				}
 				stage('integration') {
-					sh "echo 'shell scripts to run integration tests...'"
+					steps {
+						sh "echo 'shell scripts to run integration tests...'"
+					}
 				}
 			}
 		}
@@ -31,7 +41,9 @@ pipeline {
 			}
 		}
 		stage ('Deploy') {
-			sh "echo 'shell scripts to deploy to server...'"
+			steps {
+				sh "echo 'shell scripts to deploy to server...'"
+			}
 		}
 	}
 }
