@@ -5,6 +5,7 @@ pipeline {
     agent { docker 'openjdk:8-jre' } 
 	stages {
 		stage ('Clone') {
+			deleteDir()
 			checkout scm
 		}
 		stage ('Build') {
