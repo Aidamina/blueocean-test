@@ -1,12 +1,11 @@
 pipeline {
  	// Clean workspace before doing anything
-    deleteDir()
-
+    
     agent { docker 'openjdk:8-jre' } 
 	stages {
 		stage ('Clone') {
 			steps {
-				//deleteDir()
+				deleteDir()
 				checkout scm
 			}
 		}
