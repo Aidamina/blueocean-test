@@ -13,10 +13,10 @@ pipeline {
 		parallel { 
 			stage('static') {
 				sh "echo 'shell scripts to run static tests...'"
-			},
+			}
 			stage('unit') {
 				sh "echo 'shell scripts to run unit tests...'"
-			},
+			}
 			stage('integration') {
 				sh "echo 'shell scripts to run integration tests...'"
 			}
