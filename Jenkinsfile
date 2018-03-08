@@ -1,7 +1,7 @@
 pipeline {
  	// Clean workspace before doing anything
     
-    agent { docker 'openjdk:8-jre' } 
+    //agent { docker 'openjdk:8-jre' } 
 	stages {
 		stage ('Clone') {
 			steps {
