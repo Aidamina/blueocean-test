@@ -6,7 +6,7 @@ pipeline {
 	stages {
 		stage ('Clone') {
 			steps {
-				deleteDir()
+				//deleteDir()
 				checkout scm
 			}
 		}
